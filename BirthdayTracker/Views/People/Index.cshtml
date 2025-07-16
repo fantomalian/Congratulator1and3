@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BirthdayTracker.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Записи дней рождения</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Добавить новую запись</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                Фото
+            </th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @item.BirthDate.ToString("dd.MM.yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.PhotoPath))
+                    {
+                        <img src="@Url.Content(item.PhotoPath)"
+                             alt="Фото @item.Name"
+                             class="img-thumbnail"
+                             style="max-height: 180px; max-width: 180px;" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Нет фото</span>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">
+                            <i class="fas fa-edit"></i> Изменить
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash-alt"></i> Удалить
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

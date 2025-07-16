@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Дни рождения";
+}
+
+<div class="container">
+    <h1 class="mt-4">Дни рождения</h1>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h2>Сегодня празднуют</h2>
+            @if (ViewBag.TodaysBirthdays.Count > 0)
+            {
+                <div class="list-group">
+                    @foreach (var person in ViewBag.TodaysBirthdays)
+                    {
+                        <div class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                @if (!string.IsNullOrEmpty(person.PhotoPath))
+                                {
+                                    <img src="@person.PhotoPath" class="img-thumbnail" width="250" height="250" alt="@person.Name">
+                                }
+                                <div>
+                                    <h5 class="mb-1"> @person.Name</h5>
+                                    <p class="mb-1">  Исполняется @person.CalculateAge() лет</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>Сегодня никто не празднует день рождения</p>
+            }
+        </div>
+
+        <div class="col-md-6">
+            <h2>Ближайшие дни рождения</h2>
+            @if (ViewBag.UpcomingBirthdays.Count > 0)
+            {
+                <div class="list-group">
+                    @foreach (var person in ViewBag.UpcomingBirthdays)
+                    {
+                        <a asp-controller="People" asp-action="Details" asp-route-id="@person.Id" class="list-group-item list-group-item-action">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    @if (!string.IsNullOrEmpty(person.PhotoPath))
+                                    {
+                                        <img src="@person.PhotoPath" class="rounded-circle me-3" width="50" height="50" alt="@person.Name">
+                                    }
+                                    <div>
+                                        <h5 class="mb-1">@person.Name</h5>
+                                        <small>@person.BirthDate.ToString("dd MMMM")</small>
+                                    </div>
+                                </div>
+                                <span class="badge bg-primary rounded-pill">
+                                    @{
+                                        var today = DateTime.Today;
+                                        var nextBirthday = new DateTime(today.Year, person.BirthDate.Month, person.BirthDate.Day);
+                                        if (nextBirthday < today )
+                                        {
+                                            nextBirthday = nextBirthday.AddYears(1);
+                                        }
+                                        
+                                        var daysLeft = (nextBirthday - today).Days;
+                                        
+                                    }
+                                    Через @daysLeft дней
+                                </span>
+                            </div>
+                        </a>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>В ближайшее время дней рождений нет</p>
+            }
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-controller="People" asp-action="Index" class="btn btn-primary">
+            Управление списком
+        </a>
+    </div>
+</div>
