@@ -1,0 +1,14 @@
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\bin\Debug\net8.0\Поздравлятор1.exe
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\bin\Debug\net8.0\Поздравлятор1.deps.json
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\bin\Debug\net8.0\Поздравлятор1.runtimeconfig.json
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\bin\Debug\net8.0\Поздравлятор1.dll
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\bin\Debug\net8.0\Поздравлятор1.pdb
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.AssemblyInfoInputs.cache
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.AssemblyInfo.cs
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.csproj.CoreCompileInputs.cache
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.dll
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\refint\Поздравлятор1.dll
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.pdb
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\Поздравлятор1.genruntimeconfig.cache
+C:\Users\Данил\source\repos\Поздравлятор1\Поздравлятор1\obj\Debug\net8.0\ref\Поздравлятор1.dll
